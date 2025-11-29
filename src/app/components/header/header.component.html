@@ -1,0 +1,32 @@
+<header class="header">
+  <div class="container">
+    <!-- Logo -->
+    <a routerLink="/inicio" class="logo-link">
+      <div class="logo">
+        <h1 class="logo-text">Cañete Vivencial</h1>
+      </div>
+    </a>
+
+    <!-- Menú de navegación -->
+    <nav class="main-nav" [class.nav-open]="isMenuOpen">
+      <ul>
+        <li><a routerLink="/inicio" routerLinkActive="active" (click)="closeMenu()">Inicio</a></li>
+        <li><a routerLink="/destinos" routerLinkActive="active" (click)="closeMenu()">Destinos</a></li>
+        <li><a routerLink="/experiencias" routerLinkActive="active" (click)="closeMenu()">Experiencias</a></li>
+        <li><a routerLink="/empresas" routerLinkActive="active" (click)="closeMenu()">Empresas</a></li>
+        <li><a routerLink="/blog" routerLinkActive="active" (click)="closeMenu()">Blog</a></li>
+        <li><a routerLink="/contacto" routerLinkActive="active" (click)="closeMenu()">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- Botón de login -->
+    <button class="btn-login">Iniciar Sesión</button>
+
+    <!-- Botón hamburguesa (solo en móvil) -->
+    <button class="hamburger" (click)="toggleMenu()" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>

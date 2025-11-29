@@ -1,0 +1,38 @@
+<div class="contact-page">
+  <div class="container">
+    <h1 class="page-title">Contáctanos</h1>
+    <p class="subtitle">Estamos aquí para ayudarte a planificar tu experiencia en Cañete.</p>
+
+    <div class="contact-layout">
+      <div class="contact-info">
+        <h2>Información de contacto</h2>
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>Plaza de Armas, San Vicente de Cañete, Lima - Perú</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <!-- ✅ Usamos interpolación: {{ email }} → evita el error del @ -->
+          <p>{{ email }}</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone"></i>
+          <p>+51 987 654 321</p>
+        </div>
+
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <form class="contact-form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+        <input type="text" name="name" ngModel required placeholder="Tu nombre completo" />
+        <input type="email" name="email" ngModel required placeholder="Tu correo electrónico" />
+        <textarea name="message" ngModel required placeholder="Escribe tu mensaje aquí..." rows="5"></textarea>
+        <button type="submit" [disabled]="contactForm.invalid">Enviar mensaje</button>
+      </form>
+    </div>
+  </div>
+</div>

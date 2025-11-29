@@ -1,0 +1,45 @@
+<section class="experiences">
+  <div class="hero-experiences">
+    <h2>Encuentra tu experiencia en Cañete</h2>
+    <p class="subtitle">Filtra por tipo de aventura o distrito.</p>
+  </div>
+
+  <div class="container">
+    <div class="filters">
+      <div class="filter-group">
+        <label>Tipo de Experiencia:</label>
+        <select [(ngModel)]="selectedType">
+          <option value="">Todos los tipos</option>
+          <option value="aventura">Aventura</option>
+          <option value="cultural">Cultural</option>
+          <option value="gastronomia">Gastronomía</option>
+          <option value="relax">Relax</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Distrito:</label>
+        <select [(ngModel)]="selectedDistrict">
+          <option value="">Todos los distritos</option>
+          <option value="San Vicente">San Vicente</option>
+          <option value="Lunahuaná">Lunahuaná</option>
+          <option value="Cerro Azul">Cerro Azul</option>
+          <option value="Mala">Mala</option>
+        </select>
+      </div>
+      <button class="btn-reset" (click)="resetFilters()">Limpiar Filtros</button>
+    </div>
+
+    <div class="results-grid">
+      <div class="experience-card" *ngFor="let exp of filteredExperiences">
+        <img [src]="exp.image" [alt]="exp.title" />
+        <div class="card-content">
+          <h3>{{ exp.title }}</h3>
+          <p class="type">{{ exp.type | titlecase }}</p>
+          <p class="district">📍 {{ exp.district }}</p>
+          <p class="price">{{ exp.price }}</p>
+          <a [routerLink]="['/experiencia', exp.id]" class="btn-primary">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

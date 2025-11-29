@@ -1,0 +1,26 @@
+<div class="detail-page">
+  <div class="container">
+    <a routerLink="/destinos" class="back-link">← Volver a destinos</a>
+    
+    <div class="detail-header">
+      <h1>{{ title }}</h1>
+      <img [src]="image" [alt]="title">
+    </div>
+
+    <div class="detail-content">
+      <p>{{ description }}</p>
+      
+      <div class="info-section">
+        <h3>¿Qué hacer aquí?</h3>
+        <ul>
+          <li *ngFor="let activity of activities">{{ activity }}</li>
+        </ul>
+      </div>
+
+      <div class="map-placeholder">
+        <p><i class="fas fa-map-marker-alt"></i> Ubicación aproximada</p>
+        <div class="map">[Mapa de Google aquí]</div>
+      </div>
+    </div>
+  </div>
+</div>

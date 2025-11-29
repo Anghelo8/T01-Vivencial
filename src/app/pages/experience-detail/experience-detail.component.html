@@ -1,0 +1,26 @@
+<section class="experience-detail" *ngIf="experience; else notFound">
+  <div class="container">
+    <img src="https://destinations-cms-testing.s3.amazonaws.com/uploads/66018b0e22caaf00250aa5a2-1.png" [alt]="experience.title" class="detail-image">
+    <h1>{{ experience.title }}</h1>
+    <div class="meta">
+      <span class="type">{{ experience.type | titlecase }}</span>
+      <span class="district">📍 {{ experience.district }}</span>
+      <span class="price">{{ experience.price }}</span>
+    </div>
+    <p class="full-description">{{ experience.fullDescription }}</p>
+
+    <h2>¿Qué incluye?</h2>
+    <ul class="includes">
+      <li *ngFor="let item of experience.includes">{{ item }}</li>
+    </ul>
+
+    <button class="btn-reserve">Reservar Ahora</button>
+  </div>
+</section>
+
+<ng-template #notFound>
+  <div class="container not-found">
+    <h2>Experiencia no encontrada</h2>
+    <a routerLink="/experiencias">Volver a experiencias</a>
+  </div>
+</ng-template>
